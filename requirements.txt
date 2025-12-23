@@ -1,0 +1,4 @@
+sqlalchemy>=2.0
+asyncpg
+python-dotenv
+aiogram>=3.4
