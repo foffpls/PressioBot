@@ -1,15 +1,19 @@
 import os
 
 IGNORE_DIRS = {'.venv', '__pycache__', '.git', '.idea'}
-IGNORE_FILES = {'.DS_Store'}
+IGNORE_FILES = {'.DS_Store', '.env'}
 
-def print_tree(path, prefix=""):
-    files = [f for f in os.listdir(path) if f not in IGNORE_DIRS and f not in IGNORE_FILES]
-    for i, f in enumerate(files):
-        full_path = os.path.join(path, f)
-        connector = "└── " if i == len(files)-1 else "├── "
-        print(prefix + connector + f)
+def print_clean_tree(path, prefix=""):
+    items = [
+        f for f in os.listdir(path)
+        if f not in IGNORE_DIRS and f not in IGNORE_FILES
+    ]
+    for i, name in enumerate(sorted(items)):
+        full_path = os.path.join(path, name)
+        connector = "└── " if i == len(items) - 1 else "├── "
+        print(prefix + connector + name)
         if os.path.isdir(full_path):
-            print_tree(full_path, prefix + ("    " if i == len(files)-1 else "│   "))
+            new_prefix = prefix + ("    " if i == len(items) - 1 else "│   ")
+            print_clean_tree(full_path, new_prefix)
 
-print_tree(".")
+print_clean_tree(".")
