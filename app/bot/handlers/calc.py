@@ -2,7 +2,7 @@ from aiogram import Router, F
 from aiogram.types import Message, CallbackQuery
 from aiogram.fsm.context import FSMContext
 from sqlalchemy import select
-from app.bot.states import CalcFSM
+from app.bot.states import CalcFSM, OrderFSM
 from app.bot.keyboards import products_kb, materials_kb, modifiers_kb
 from app.db.session import AsyncSessionLocal
 from app.db.models import Product, Material, Modifier
@@ -182,4 +182,3 @@ async def select_modifiers(callback: CallbackQuery, state: FSMContext):
         reply_markup=modifiers_kb(modifiers, selected)
     )
     await callback.answer()
-

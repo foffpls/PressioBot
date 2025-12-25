@@ -5,3 +5,6 @@ class CalcFSM(StatesGroup):
     quantity = State()
     material = State()
     modifiers = State()
+
+class OrderFSM(StatesGroup):
+    wait_date = State()
