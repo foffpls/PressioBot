@@ -7,4 +7,4 @@ class CalcFSM(StatesGroup):
     modifiers = State()
 
 class OrderFSM(StatesGroup):
-    wait_date = State()
+    waiting_date = State()
