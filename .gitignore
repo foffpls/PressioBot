@@ -2,12 +2,13 @@
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyc
+*.pyo
+*.pyd
 
 # C extensions
 *.so
-
-# IDE
-.idea/
+*.dylib
 
 # Distribution / packaging
 .Python
@@ -22,10 +23,13 @@ lib64/
 parts/
 sdist/
 var/
+wheels/
 *.egg-info/
 .installed.cfg
 *.egg
 *.whl
+pip-wheel-metadata/
+share/python-wheels/
 
 # Virtual environment
 .venv/
@@ -34,44 +38,140 @@ ENV/
 env/
 env.bak/
 venv.bak/
+.conda/
 
-# PyCharm
+# IDE - PyCharm
 .idea/
 *.iml
 *.ipr
 *.iws
 
-# VS Code
+# IDE - VS Code
 .vscode/
+*.code-workspace
+
+# IDE - Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# IDE - Vim
+*.swp
+*.swo
+*~
+
+# IDE - Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# OS files - macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# OS files - Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# OS files - Linux
+*~
+.directory
+.Trash-*
 
 # Logs
 *.log
+*.log.*
 logs/
+**/logs/
+app/bot/logs/
 
 # Database files
 *.sqlite3
 *.db
+*.sqlite
+*.sqlite3-journal
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.test
+config.py
+secrets.py
 
 # Coverage reports
 htmlcov/
 .coverage
 .coverage.*
+.coverage.*.*
 .cache
 nosetests.xml
 coverage.xml
 *.cover
 *.py,cover
-
-# Telegram bot token or config files
-config.py
-*.env
-
-# Mypy
-.mypy_cache/
-
-# pytest
+.hypothesis/
 .pytest_cache/
 
-# Other
+# Type checking
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath
+*.sage.py
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# mkdocs
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Backup files
 *.bak
-*.swp
+*.backup
+*.tmp
+*.temp
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
